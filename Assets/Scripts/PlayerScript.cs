@@ -89,7 +89,8 @@ public class PlayerScript : MonoBehaviour
                 other.SendMessage("Activar");
             }
         }
-        if (other.gameObject.tag == "Puerta"){
+        if (other.gameObject.CompareTag(TagConstants.Door))
+        {
             Invoke("ANivel2", 0.1f);
         }
     }
