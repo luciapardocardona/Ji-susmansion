@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public GameObject controles;
+    private void Start(){
+        controles.SetActive(false);
+    }
+    
+    public void Level1(){
+        controles.SetActive(true);
+        Invoke("Inicia", 2f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Inicia(){
+        SceneManager.LoadScene("Nivel1");
+    }
+
+    void Update(){
+        Salir();
+    }
+
+    private void Salir(){
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
+    }
+
+    public void Quit(){
+        Application.Quit();
     }
 }
