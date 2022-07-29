@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
-    public int jump = 20, vel = 8; 
+    public int jump = 10, vel = 8; 
     Rigidbody2D rb;
     float enX;
     public SpriteRenderer sprite; //Vamos a hacer un flip al player
-    bool bloqueo, girado;
+    bool bloqueo;//, girado;
     public Animator animacion;
     public AudioClip soundsalto;
     AudioSource sonido;
@@ -32,11 +32,11 @@ public class PlayerScript : MonoBehaviour
 
         if (rb.velocity.x > 0){
             sprite.flipX = false;
-            girado = false; // para poder lanzar objetos
+            //girado = false; // para poder lanzar objetos
             capsule.offset = new Vector2(-0.27f, 0);
         }else if (rb.velocity.x < 0){
             sprite.flipX = true;
-            girado = true; // para poder lanzar objetos
+            //girado = true; // para poder lanzar objetos
             capsule.offset = new Vector2(0.27f, 0);
         }
         
@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void Jump(){
-        if ((Input.GetKeyDown(KeyCode.W)) && Ground()){
+        if (((Input.GetKeyDown(KeyCode.W))) && Ground()){
             rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
             sonido.PlayOneShot(soundsalto);
         }
@@ -86,10 +86,16 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.tag == "Interruptor"){
             if (Input.GetKeyDown(KeyCode.E)){
-                Debug.Log("Se viene");
                 other.SendMessage("Activar");
             }
         }
+        if (other.gameObject.tag == "Puerta"){
+            Invoke(ANivel2, 0.1f);
+        }
+    }
+
+    private void ANivel2(){
+        SceneManager.LoadScene("Nivel2");
     }
 
     private void IrACreditos(){
