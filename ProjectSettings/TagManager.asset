@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - Start
+  - WrongDoor
   layers:
   - Default
   - TransparentFX
