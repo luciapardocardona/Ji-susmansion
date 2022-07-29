@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
         if (other.gameObject.tag == "Puerta"){
-            Invoke(ANivel2, 0.1f);
+            Invoke("ANivel2", 0.1f);
         }
     }
 
