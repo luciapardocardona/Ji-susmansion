@@ -5,4 +5,8 @@ using UnityEngine;
 public class TagConstants 
 {
     public const string Door = "Door";
+
+    public const string Interruptor = "Interruptor";
+
+
 }

@@ -46,10 +46,10 @@ public class PlayerScript : MonoBehaviour
 
     private void AnimarPlayer(){
         if (bloqueo){
-            animacion.Play("Idle");
+            animacion.Play(AnimationConstants.Idle);
         }else{
             if (Input.GetKey(KeyCode.E)){
-                animacion.Play("MoradoPrender");
+                animacion.Play(AnimationConstants.MoradoPrender);
             }else if (((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.D))) && (Ground())){
                 animacion.Play("Walk");
             }else if (!Ground()){
@@ -84,7 +84,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        if (other.gameObject.tag == "Interruptor"){
+        if (other.gameObject.CompareTag(TagConstants.Interruptor)){
             if (Input.GetKeyDown(KeyCode.E)){
                 other.SendMessage("Activar");
             }
