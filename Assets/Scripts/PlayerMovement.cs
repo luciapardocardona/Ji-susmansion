@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 15f;
+    PlayerScript playerScript;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -65,6 +66,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnAction(InputValue value)
     {
-        
+        if (playerScript.isPlayerTouchingDoor)
+        {
+            
+        }
     }
 }

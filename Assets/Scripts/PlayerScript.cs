@@ -17,6 +17,9 @@ public class PlayerScript : MonoBehaviour
     CapsuleCollider2D capsule;
 
     PlayerMovement movement;
+    public bool isPlayerTouchingDoor;
+    public bool isPlayerOnExit;
+    public bool isPlayerOnSwitch;
 
     void Awake()
     {
@@ -28,5 +31,17 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         movement.Run();
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        // Si entra en una puerta
+        isPlayerTouchingDoor = other.gameObject.CompareTag(TagConstants.Door);
+        if (isPlayerTouchingDoor)
+        {            
+            //isPlayerOnExit = other.gameObject.isCorrectDoor;
+            isPlayerOnExit = true;
+        }
+
+        isPlayerOnSwitch =  other.gameObject.CompareTag(TagConstants.Switch);
     }
 }
