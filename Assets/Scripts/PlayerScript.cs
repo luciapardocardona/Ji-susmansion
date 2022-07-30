@@ -91,7 +91,9 @@ public class PlayerScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag(TagConstants.Door))
         {
-            Invoke("ANivel2", 0.1f);
+            if(Input.GetKeyDown(KeyCode.E)){
+                Invoke("ANivel2", 0.1f);
+            }
         }
     }
 
