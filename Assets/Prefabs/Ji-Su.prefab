@@ -105,7 +105,7 @@ MonoBehaviour:
   jump: 15
   vel: 8
   sprite: {fileID: 4667950658442149461}
-  animacion: {fileID: 0}
+  animacion: {fileID: 2355777882310337964}
   soundsalto: {fileID: 0}
 --- !u!82 &7855474773564373322
 AudioSource:
@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6165785731515966151}
   - component: {fileID: 4667950658442149461}
+  - component: {fileID: 2355777882310337964}
   m_Layer: 2
   m_Name: Idle_1
   m_TagString: Player
@@ -287,3 +288,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2355777882310337964
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004576149373073995}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 238c05e6c0506e743980fd58bda8b1d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
