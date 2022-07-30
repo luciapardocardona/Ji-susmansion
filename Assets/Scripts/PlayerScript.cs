@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour
         sonido = GetComponent<AudioSource>();
         capsule = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        
+
         bloqueo = false;
     }
     void Update() {
@@ -97,16 +97,5 @@ public class PlayerScript : MonoBehaviour
         //}
     }
 
-    public void ANivel2(){
-        SceneManager.LoadScene("Nivel2");
-    }
-
-    private void IrACreditos(){
-        SceneManager.LoadScene("Creditos");
-    }
-
-    private void Escape(){
-        bloqueo = true;
-        SceneManager.LoadScene("Menu");
-    }
+   
 }
