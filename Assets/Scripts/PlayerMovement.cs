@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sprite;
     SwitchScript switchScript;
     private bool thereIsSwitch;
+    private string scene;
 
     void Awake()
     {
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
 
-        string scene = SceneManager.GetActiveScene().name;
+        scene = SceneManager.GetActiveScene().name;
         thereIsSwitch = scene == SceneConstants.Nivel1 || scene == SceneConstants.Nivel3;
         if (thereIsSwitch)
         {
@@ -75,11 +76,22 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (playerScript.isPlayerOnSwitch)
         {
-            switchScript.isLightOn = true;
+            if (scene == SceneConstants.Nivel3)
+            {
+                switchScript.isLightOn = !switchScript.isLightOn;
+            }
+            else
+            {
+                switchScript.isLightOn = true;
+            }
             switchScript.ToggleLight();
             TogglePlayerColor();
 
         }
+    }
+    void onEscape(InputValue value)
+    {
+        SceneManager.LoadScene(SceneConstants.Menu);
     }
 
     private void TogglePlayerColor()
