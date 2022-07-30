@@ -35,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
         myRigidbody.velocity = playerVelocity;
         myAnimator.SetBool(AnimationConstants.Walk, playerHasHorizontalSpeed);
+
+        
+        if (myRigidbody.velocity.x > 0){
+            //sprite.flipX = false;
+        }else if (myRigidbody.velocity.x < 0){
+            //sprite.flipX = true;
+        }
     }
     void OnMove(InputValue value)
     {
