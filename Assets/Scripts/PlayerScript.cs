@@ -17,8 +17,11 @@ public class PlayerScript : MonoBehaviour
     GameObject padre;
     CapsuleCollider2D capsule;
 
-    void Start()
+    PlayerMovement movement;
+
+    void Awake()
     {
+        movement = GetComponent<PlayerMovement>();
         sonido = GetComponent<AudioSource>();
         capsule = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +29,8 @@ public class PlayerScript : MonoBehaviour
         bloqueo = false;
     }
     void Update() {
+        movement.Run();
+        /*
         if (!bloqueo){
             Jump();
         }
@@ -41,8 +46,9 @@ public class PlayerScript : MonoBehaviour
         }
         
         AnimarPlayer();
+        */
     }
-
+/*
 
     private void AnimarPlayer(){
         if (bloqueo){
@@ -96,6 +102,6 @@ public class PlayerScript : MonoBehaviour
         //    }
         //}
     }
-
+*/
    
 }
