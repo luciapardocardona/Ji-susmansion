@@ -7,8 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     Animator myAnimator;
+
+    PlayerScript playerScript;
     private void Awake()
     {
+        GameObject gameObject = GameObject.Find("Ji-Su");
+
+        playerScript = gameObject.GetComponent<PlayerScript>();
     }
 
     public void HandleSceneTransition()
@@ -23,14 +28,13 @@ public class GameManager : MonoBehaviour
                 Invoke(nameof(GoToNivel2), 2f);
                 break;
             case SceneConstants.Nivel2:
-                if (true) //isCorrectDoor
+                if (playerScript.isPlayerOnExit) //isCorrectDoor
                 {
                     GoTo(SceneConstants.Nivel3);
                 }
                 else
                 {
-                    //GoTo(SceneConstants.Nivel2);
-
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
 
                 break;

@@ -547,6 +547,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &789419809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5884866435287243291, guid: 25dcce938a551464e8f6cc254fc0123a, type: 3}
+  m_PrefabInstance: {fileID: 5884866433434967430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &789419810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789419809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e344e703363a44ab82aeff8009a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectDoor: 1
 --- !u!4 &914565425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043773952197236585, guid: c097d579e9fcc5e448557f9ed01852c3, type: 3}
@@ -704,6 +722,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a763d18f581584d8074f9e394ad2d4, type: 3}
+--- !u!1 &1312670649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6559213127105113676, guid: e9f6bdacc1a4e024b9ee6f94f2a84a00, type: 3}
+  m_PrefabInstance: {fileID: 6559213127170729691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1312670650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312670649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e344e703363a44ab82aeff8009a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectDoor: 0
 --- !u!1001 &1313779383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1291,6 +1327,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5884866435287243289, guid: 25dcce938a551464e8f6cc254fc0123a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8141055
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884866435287243289, guid: 25dcce938a551464e8f6cc254fc0123a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.049764395
+      objectReference: {fileID: 0}
     - target: {fileID: 5884866435287243291, guid: 25dcce938a551464e8f6cc254fc0123a, type: 3}
       propertyPath: m_Name
       value: Purple Door
@@ -1374,6 +1418,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6559213127105113666, guid: e9f6bdacc1a4e024b9ee6f94f2a84a00, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7892239
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559213127105113666, guid: e9f6bdacc1a4e024b9ee6f94f2a84a00, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.037323833
+      objectReference: {fileID: 0}
     - target: {fileID: 6559213127105113667, guid: e9f6bdacc1a4e024b9ee6f94f2a84a00, type: 3}
       propertyPath: m_RootOrder
       value: 9
