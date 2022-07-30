@@ -9,9 +9,9 @@ public class DoorScript : MonoBehaviour
     {
         Player = GetComponent<PlayerScript>();
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag(TagConstants.Player))
+        if (other.gameObject.CompareTag(TagConstants.Player))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
