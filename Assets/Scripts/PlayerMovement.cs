@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D myBoxCollider;
     GameManager gameManager;
 
-    public bool luz = false;
+    public bool isLightOn = false;
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -22,16 +22,11 @@ public class PlayerMovement : MonoBehaviour
         myBoxCollider = GetComponent<BoxCollider2D>();
         gameManager = GetComponent<GameManager>();
 
-        luz = false;
+        isLightOn = true;
     }
 
     void Update(){
-        if (luz)
-        {
-            myAnimator.SetBool("isB&W", false);
-        }else{
-            myAnimator.SetBool("isB&W", true);
-        }
+            myAnimator.SetBool("isB&W", !isLightOn);
     }
 
     public void Run()
