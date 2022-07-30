@@ -8,5 +8,5 @@ public class TagConstants
 
     public const string Interruptor = "Interruptor";
 
-
+    public const string Player = "Player";
 }

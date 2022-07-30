@@ -84,20 +84,20 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        if (other.gameObject.CompareTag(TagConstants.Interruptor)){
-            if (Input.GetKeyDown(KeyCode.E)){
-                other.SendMessage("Activar");
-            }
-        }
-        if (other.gameObject.CompareTag(TagConstants.Door))
-        {
-            if(Input.GetKeyDown(KeyCode.E)){
-                Invoke("ANivel2", 0.1f);
-            }
-        }
+        //if (other.gameObject.CompareTag(TagConstants.Interruptor)){
+        //    if (Input.GetKeyDown(KeyCode.E)){
+        //        other.SendMessage("Activar");
+        //    }
+        //}
+        //if (other.gameObject.CompareTag(TagConstants.Door))
+        //{
+        //    if(Input.GetKeyDown(KeyCode.E)){
+        //        Invoke(nameof(ANivel2), 0.1f);
+        //    }
+        //}
     }
 
-    private void ANivel2(){
+    public void ANivel2(){
         SceneManager.LoadScene("Nivel2");
     }
 
