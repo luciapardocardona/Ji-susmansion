@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 15f;
+    [SerializeField] Camera mainCamera;
     PlayerScript playerScript;
 
     Vector2 moveInput;
@@ -23,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         myBoxCollider = GetComponent<BoxCollider2D>();
-        gameManager = GetComponent<GameManager>();
+        gameManager = mainCamera.GetComponent<GameManager>();
+        playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
 
         isLightOn = false;
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerScript.isPlayerTouchingDoor)
         {
-            
+            this.gameManager.HandleSceneTransition();
         }
     }
 }

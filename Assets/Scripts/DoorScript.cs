@@ -8,6 +8,9 @@ public class DoorScript : MonoBehaviour
     [SerializeField]
     Camera mainCamera;
 
+    [SerializeField]
+    public bool isCorrectDoor = false;
+
     GameManager GameManager;
 
     public bool isPlayerTouchingDoor = false;

@@ -36,12 +36,14 @@ public class PlayerScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         // Si entra en una puerta
         isPlayerTouchingDoor = other.gameObject.CompareTag(TagConstants.Door);
+
         if (isPlayerTouchingDoor)
         {            
-            //isPlayerOnExit = other.gameObject.isCorrectDoor;
-            isPlayerOnExit = true;
+            isPlayerOnExit = other.gameObject.GetComponent<DoorScript>().isCorrectDoor;
         }
-
-        isPlayerOnSwitch =  other.gameObject.CompareTag(TagConstants.Switch);
+        else
+        {
+            isPlayerOnSwitch = other.gameObject.CompareTag(TagConstants.Switch);
+        }
     }
 }
