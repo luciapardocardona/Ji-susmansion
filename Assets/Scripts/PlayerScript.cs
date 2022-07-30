@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D rb;
     float enX;
     public SpriteRenderer sprite; //Vamos a hacer un flip al player
-    bool bloqueo;//, girado;
+    //bool bloqueo;//, girado;
     public Animator animacion;
     public AudioClip soundsalto;
     AudioSource sonido;
@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
         capsule = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
 
-        bloqueo = false;
+        //bloqueo = false;
     }
     void Update() {
         movement.Run();

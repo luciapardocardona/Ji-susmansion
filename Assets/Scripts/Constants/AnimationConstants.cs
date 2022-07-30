@@ -8,5 +8,7 @@ public class AnimationConstants
 
     public const string MoradoPrender = "MoradoPrender";
 
-    public const string Walk = "Walk";
+    public const string Walk = "isWalking";
+
+    public const string hasJump = "hasJump";
 }

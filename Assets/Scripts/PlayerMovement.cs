@@ -13,18 +13,33 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     BoxCollider2D myBoxCollider;
     GameManager gameManager;
-    void Start()
+
+    public bool luz = false;
+    void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
+        myAnimator = GetComponentInChildren<Animator>();
         myBoxCollider = GetComponent<BoxCollider2D>();
         gameManager = GetComponent<GameManager>();
+
+        luz = false;
+    }
+
+    void Update(){
+        if (luz = true)
+        {
+            myAnimator.SetBool("isB&W", false);
+        }else{
+            myAnimator.SetBool("isB&W", true);
+        }
     }
 
     public void Run()
     {
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
         myRigidbody.velocity = playerVelocity;
+        myAnimator.SetBool(AnimationConstants.Walk, playerHasHorizontalSpeed);
     }
     void OnMove(InputValue value)
     {
@@ -36,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         if (value.isPressed && myBoxCollider.IsTouchingLayers(groundLayer))
         {
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
+            myAnimator.SetTrigger(AnimationConstants.hasJump);
         }
     }
     void OnAction(InputValue value)
