@@ -13,24 +13,8 @@ public class DoorScript : MonoBehaviour
 
     GameManager GameManager;
 
-    public bool isPlayerTouchingDoor = false;
     private void Awake()
     { 
         this.GameManager = mainCamera.GetComponent<GameManager>();
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag(TagConstants.Player))
-        {
-            isPlayerTouchingDoor = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag(TagConstants.Player))
-        {
-            isPlayerTouchingDoor = false;
-        }
     }
 }
