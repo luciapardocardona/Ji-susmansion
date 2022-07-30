@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    PlayerScript Player;
+
+    [SerializeField]
+    Camera mainCamera;
+
+    GameManager GameManager;
     private void Awake()
-    {
-        Player = GetComponent<PlayerScript>();
+    { 
+        this.GameManager = mainCamera.GetComponent<GameManager>();
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -15,14 +19,13 @@ public class DoorScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Testing");
-                Invoke(nameof(Player.ANivel2), 0.1f);
-
+                Invoke(nameof(GotoLevel2), 0.1f);
             }
         }
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Invoke(nameof(Player.ANivel2), 0.1f);
-        //}
+    }
+
+    private void GotoLevel2()
+    {
+        this.GameManager.ANivel2();
     }
 }
