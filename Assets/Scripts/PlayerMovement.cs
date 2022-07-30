@@ -15,24 +15,24 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     BoxCollider2D myBoxCollider;
     SpriteRenderer sprite;
-
-    public bool isLightOn = false;
+    SwitchScript switchScript;
 
     void Awake()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         myBoxCollider = GetComponent<BoxCollider2D>();
         playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-        this.gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
-        isLightOn = false;
+        switchScript = GameObject.Find("Scenario").GetComponent<SwitchScript>();
+        TogglePlayerColor();
     }
+
 
     void Update()
     {
-        myAnimator.SetBool("isB&W", !isLightOn);
+        //TogglePlayerColor();
     }
 
     public void Run()
@@ -75,5 +75,10 @@ public class PlayerMovement : MonoBehaviour
         {
             //gameManager.ToggleSwitch();
         }
+    }
+
+    private void TogglePlayerColor()
+    {
+        myAnimator.SetBool("isB&W", !switchScript.isLightOn);
     }
 }

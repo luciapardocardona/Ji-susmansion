@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class SwitchScript : MonoBehaviour
 {
-    public GameObject on, off;
-    
+    public GameObject[] onLightOn, onLightOff;
+    public bool isLightOn = false;
+
     void Start()
     {
-        on.SetActive(false);
-        off.SetActive(true);
+        ToggleLight();
     }
 
-    public void Activar(){
-        on.SetActive(true);
-        off.SetActive(false);
+    public void ToggleLight()
+    {
+        foreach (var item in onLightOn)
+        {
+            item.SetActive(isLightOn);
+        }
+        foreach (var item in onLightOff)
+        {
+            item.SetActive(!isLightOn);
+        }
     }
 }
