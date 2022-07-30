@@ -8,13 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 15f;
     [SerializeField] Camera mainCamera;
-    PlayerScript playerScript;
+    [SerializeField] GameManager gameManager;
 
+    PlayerScript playerScript;
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     BoxCollider2D myBoxCollider;
-    GameManager gameManager;
     SpriteRenderer sprite;
 
     public bool isLightOn = false;
@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         myBoxCollider = GetComponent<BoxCollider2D>();
-        gameManager = mainCamera.GetComponent<GameManager>();
         playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
 
