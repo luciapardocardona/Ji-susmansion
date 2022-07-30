@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    Animator myAnimator;
+    private void Awake() {
+        myAnimator = GameObject.Find("Scenario").GetComponent<Animator>();
+    }
+    
     public void HandleSceneTransition()
     {
         var currentScene = SceneManager.GetActiveScene();
@@ -12,7 +17,8 @@ public class GameManager : MonoBehaviour
         switch (currentScene.name)
         {
             case SceneConstants.Nivel1:
-                ANivel2();
+                myAnimator.SetBool(AnimationConstants.action, true);
+                Invoke(nameof(ANivel2), 2f);
                 break;
             case SceneConstants.Nivel2:
                 break;

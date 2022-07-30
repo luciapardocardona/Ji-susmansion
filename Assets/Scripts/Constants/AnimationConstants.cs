@@ -11,4 +11,6 @@ public class AnimationConstants
     public const string Walk = "isWalking";
 
     public const string hasJump = "hasJump";
+
+    public const string action = "isAction";
 }
