@@ -16,11 +16,4 @@ public class SwitchScript : MonoBehaviour
         on.SetActive(true);
         off.SetActive(false);
     }
-    //private void OnTriggerStay2D(Collider2D other) {
-        //if (other.gameObject.tag == "Interruptor"){
-            //if (Input.GetKeyDown(KeyCode.O)){
-                //other.SendMessage("Activar");
-            //}
-        //}
-    //}
 }

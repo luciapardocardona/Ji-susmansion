@@ -72,5 +72,9 @@ public class PlayerMovement : MonoBehaviour
         {
             this.gameManager.HandleSceneTransition();
         }
+        else if (playerScript.isPlayerOnSwitch)
+        {
+            //gameManager.ToggleSwitch();
+        }
     }
 }
