@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D myBoxCollider;
     SpriteRenderer sprite;
     SwitchScript switchScript;
+    private bool thereIsSwitch;
 
     void Awake()
     {
@@ -25,7 +27,13 @@ public class PlayerMovement : MonoBehaviour
         myBoxCollider = GetComponent<BoxCollider2D>();
         playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-        switchScript = GameObject.Find("Scenario").GetComponent<SwitchScript>();
+
+        string scene = SceneManager.GetActiveScene().name;
+        thereIsSwitch = scene == SceneConstants.Nivel1 || scene == SceneConstants.Nivel3;
+        if (thereIsSwitch)
+        {
+            switchScript = GameObject.Find("Scenario").GetComponent<SwitchScript>();
+        }
         TogglePlayerColor();
     }
 
@@ -76,6 +84,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void TogglePlayerColor()
     {
-        myAnimator.SetBool("isB&W", !switchScript.isLightOn);
+        if (thereIsSwitch)
+        {
+            myAnimator.SetBool("isB&W", !switchScript.isLightOn);
+        }
+        else
+        {
+            myAnimator.SetBool("isB&W", false);
+        }
     }
 }

@@ -76,6 +76,9 @@ MonoBehaviour:
   sprite: {fileID: 4667950658442149461}
   animacion: {fileID: 2355777882310337964}
   soundsalto: {fileID: 0}
+  isPlayerTouchingDoor: 0
+  isPlayerOnExit: 0
+  isPlayerOnSwitch: 0
 --- !u!82 &7855474773564373322
 AudioSource:
   m_ObjectHideFlags: 0
@@ -185,7 +188,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -196,7 +199,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 1.75}
   m_EdgeRadius: 0
 --- !u!114 &4821168834603283720
 MonoBehaviour:
@@ -212,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 8
   jumpSpeed: 15
+  gameManager: {fileID: 0}
 --- !u!114 &7855474773247967086
 MonoBehaviour:
   m_ObjectHideFlags: 0
