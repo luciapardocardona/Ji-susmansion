@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update(){
-        if (luz = true)
+        if (luz)
         {
             myAnimator.SetBool("isB&W", false);
         }else{
