@@ -13,20 +13,24 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     BoxCollider2D myBoxCollider;
     GameManager gameManager;
+    SpriteRenderer sprite;
 
     public bool isLightOn = false;
+
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         myBoxCollider = GetComponent<BoxCollider2D>();
         gameManager = GetComponent<GameManager>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
 
-        isLightOn = true;
+        isLightOn = false;
     }
 
-    void Update(){
-            myAnimator.SetBool("isB&W", !isLightOn);
+    void Update()
+    {
+        myAnimator.SetBool("isB&W", !isLightOn);
     }
 
     public void Run()
@@ -36,11 +40,14 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity = playerVelocity;
         myAnimator.SetBool(AnimationConstants.Walk, playerHasHorizontalSpeed);
 
-        
-        if (myRigidbody.velocity.x > 0){
-            //sprite.flipX = false;
-        }else if (myRigidbody.velocity.x < 0){
-            //sprite.flipX = true;
+
+        if (myRigidbody.velocity.x > 0)
+        {
+            sprite.flipX = false;
+        }
+        else if (myRigidbody.velocity.x < 0)
+        {
+            sprite.flipX = true;
         }
     }
     void OnMove(InputValue value)
