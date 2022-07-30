@@ -13,7 +13,6 @@ public class DoorScript : MonoBehaviour
     { 
         this.GameManager = mainCamera.GetComponent<GameManager>();
     }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(TagConstants.Player))
