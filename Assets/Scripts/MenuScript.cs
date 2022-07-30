@@ -12,7 +12,9 @@ public class MenuScript : MonoBehaviour
     
     public void Level1(){
         controles.SetActive(true);
-        Invoke("Inicia", 2f);
+        if(Input.anyKey){
+            Invoke("Inicia", 0.1f);
+        }
     }
 
     private void Inicia(){
