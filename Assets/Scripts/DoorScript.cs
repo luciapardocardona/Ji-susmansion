@@ -10,7 +10,7 @@ public class DoorScript : MonoBehaviour
 
     GameManager GameManager;
 
-    bool isPlayerTouchingDoor = false;
+    public bool isPlayerTouchingDoor = false;
     private void Awake()
     { 
         this.GameManager = mainCamera.GetComponent<GameManager>();
@@ -29,18 +29,5 @@ public class DoorScript : MonoBehaviour
         {
             isPlayerTouchingDoor = false;
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Invoke(nameof(GotoLevel2), 0.1f);
-        }
-    }
-
-    private void GotoLevel2()
-    {
-        this.GameManager.ANivel2();
     }
 }
