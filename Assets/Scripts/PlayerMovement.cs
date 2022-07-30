@@ -29,12 +29,6 @@ public class PlayerMovement : MonoBehaviour
         TogglePlayerColor();
     }
 
-
-    void Update()
-    {
-        //TogglePlayerColor();
-    }
-
     public void Run()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
@@ -69,11 +63,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerScript.isPlayerTouchingDoor)
         {
-            this.gameManager.HandleSceneTransition();
+            gameManager.HandleSceneTransition();
         }
         else if (playerScript.isPlayerOnSwitch)
         {
-            //gameManager.ToggleSwitch();
+            switchScript.isLightOn = true;
+            switchScript.ToggleLight();
+            TogglePlayerColor();
+
         }
     }
 

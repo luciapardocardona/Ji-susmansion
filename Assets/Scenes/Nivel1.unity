@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 317721703}
   m_Layer: 0
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,6 +709,10 @@ PrefabInstance:
     - target: {fileID: 4774742915289834088, guid: d2c75c734327b6844a113bb5f55636df, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774742915289834088, guid: d2c75c734327b6844a113bb5f55636df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4774742915289834088, guid: d2c75c734327b6844a113bb5f55636df, type: 3}
       propertyPath: m_TagString
@@ -1119,8 +1123,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1231483841
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 24731b44695aca04697c23bbf3ce00a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

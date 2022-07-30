@@ -33,12 +33,13 @@ public class PlayerScript : MonoBehaviour
         movement.Run();
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
         // Si entra en una puerta
         isPlayerTouchingDoor = other.gameObject.CompareTag(TagConstants.Door);
 
         if (isPlayerTouchingDoor)
-        {            
+        {
             isPlayerOnExit = other.gameObject.GetComponent<DoorScript>().isCorrectDoor;
         }
         else
@@ -49,11 +50,17 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        isPlayerTouchingDoor = !other.gameObject.CompareTag(TagConstants.Door);
-
-        if (!isPlayerTouchingDoor)
+        switch (other.gameObject.tag)
         {
-            isPlayerOnExit = false;
+            case TagConstants.Door:
+                isPlayerTouchingDoor = false;
+                isPlayerOnExit = false;
+                break;
+            case TagConstants.Switch:
+                isPlayerOnSwitch = false;
+                break;
+            default:
+                break;
         }
     }
 }
