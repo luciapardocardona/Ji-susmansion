@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 15f;
-    [SerializeField] Camera mainCamera;
     [SerializeField] GameManager gameManager;
 
     PlayerScript playerScript;
@@ -26,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         myBoxCollider = GetComponent<BoxCollider2D>();
         playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        this.gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         isLightOn = false;
     }
