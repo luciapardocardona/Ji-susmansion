@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         GameObject gameObject = GameObject.Find("Ji-Su");
 
         playerScript = gameObject.GetComponent<PlayerScript>();
+        sound = GetComponent<AudioSource>();
     }
 
     public void HandleSceneTransition()

@@ -1955,7 +1955,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21ee0900082afb941bcf3c7ca4763712, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2246,6 +2246,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5751253185725206167, guid: 61425522062fc454a836e04e2864982a, type: 3}
+      propertyPath: soundWoodDoor
+      value: 
+      objectReference: {fileID: 8300000, guid: 865b8ca8d0d8c30419a4622b1d5921fb, type: 3}
+    - target: {fileID: 5751253185725206167, guid: 61425522062fc454a836e04e2864982a, type: 3}
+      propertyPath: soundMetalDoor
+      value: 
+      objectReference: {fileID: 8300000, guid: 9978ef7866405844db0be52a5c6ed677, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61425522062fc454a836e04e2864982a, type: 3}
 --- !u!1001 &6449013200141120758
