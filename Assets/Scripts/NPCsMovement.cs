@@ -25,7 +25,7 @@ public class NPCsMovement : MonoBehaviour
             tmpMonsters.Add(index);
             var monster = monsters[index];
             monster.transform.position = new Vector3(positions[posIndex], posY, posZ);
-            //monster.GetComponent<NPCsDialogSystem>().selectedText = posIndex == 1 ? 0 : Random.Range(1, 2);
+            monster.GetComponent<NPCsDialogSystem>().selectedText = posIndex == 1 ? 0 : Random.Range(1, 2);
         }
     }
 }
