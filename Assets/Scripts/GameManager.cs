@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     Animator myAnimator;
 
+    private string nextScene;
+
     PlayerScript playerScript;
     private void Awake()
     {
@@ -25,12 +27,14 @@ public class GameManager : MonoBehaviour
             case SceneConstants.Nivel1:
                 myAnimator = GameObject.Find("Door").GetComponentInChildren<Animator>();
                 myAnimator.SetBool(AnimationConstants.action, true);
-                Invoke(nameof(GoToNivel2), 2f);
+                this.nextScene = SceneConstants.Nivel2;
+                Invoke(nameof(GoToNextScene), 2f);
                 break;
             case SceneConstants.Nivel2:
                 if (playerScript.isPlayerOnExit) //isCorrectDoor
                 {
-                    GoToScene(SceneConstants.Nivel3);
+                    this.nextScene = SceneConstants.Nivel3;
+                    Invoke(nameof(GoToNextScene), 2f);
                 }
                 else
                 {
@@ -40,7 +44,8 @@ public class GameManager : MonoBehaviour
             case SceneConstants.Nivel3:
                 if(playerScript.isPlayerOnExit)
                 {
-                    GoToScene(SceneConstants.Creditos);
+                    this.nextScene = SceneConstants.Creditos;
+                    Invoke(nameof(GoToNextScene), 2f);
                 }
                 else
                 {
@@ -57,13 +62,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void GoToNivel2()
+    private void GoToNextScene()
     {
-        GoToScene(SceneConstants.Nivel2);
-    }
-
-    private void GoToScene(string scene)
-    {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(this.nextScene);
     }
 }
