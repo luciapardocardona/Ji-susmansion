@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public void HandleSceneTransition()
     {
         var currentScene = SceneManager.GetActiveScene();
-
         if(currentScene.name != SceneConstants.Nivel1)
         {
             sound.PlayOneShot(soundWoodDoor);
@@ -33,10 +32,10 @@ public class GameManager : MonoBehaviour
         switch (currentScene.name)
         {
             case SceneConstants.Nivel1:
+                sound.PlayOneShot(soundMetalDoor);
                 myAnimator = GameObject.Find("Door").GetComponentInChildren<Animator>();
                 myAnimator.SetBool(AnimationConstants.action, true);
                 this.nextScene = SceneConstants.Nivel2;
-                sound.PlayOneShot(soundMetalDoor);
                 Invoke(nameof(GoToNextScene), 2f);
                 break;
             case SceneConstants.Nivel2:

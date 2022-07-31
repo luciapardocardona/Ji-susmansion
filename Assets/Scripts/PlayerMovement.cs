@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         sound = GetComponent<AudioSource>();
