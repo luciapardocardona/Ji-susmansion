@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     Animator myAnimator;
+    AudioSource sound;
 
     private string nextScene;
+    public AudioClip soundWoodDoor, soundMetalDoor;
 
     PlayerScript playerScript;
     private void Awake()
@@ -29,12 +31,14 @@ public class GameManager : MonoBehaviour
                 myAnimator.SetBool(AnimationConstants.action, true);
                 this.nextScene = SceneConstants.Nivel2;
                 Invoke(nameof(GoToNextScene), 2f);
+                sound.PlayOneShot(soundMetalDoor);
                 break;
             case SceneConstants.Nivel2:
                 if (playerScript.isPlayerOnExit) //isCorrectDoor
                 {
                     this.nextScene = SceneConstants.Nivel3;
                     Invoke(nameof(GoToNextScene), 2f);
+                    sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {
@@ -46,6 +50,7 @@ public class GameManager : MonoBehaviour
                 {
                     this.nextScene = SceneConstants.Creditos;
                     Invoke(nameof(GoToNextScene), 2f);
+                    sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {

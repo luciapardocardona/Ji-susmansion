@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public GameObject controles;
+    public GameObject controles, play;
     private void Start(){
         controles.SetActive(false);
+        play.SetActive(true);
     }
     
     public void Level1(){
         controles.SetActive(true);
+        play.SetActive(false);
         Invoke("Inicia", 2f);
         
     }

@@ -660,8 +660,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Artistas:\nMar\xEDa Zamora\nGonzalo \n\nProgramadores:\nPatricia \nLucia
-    \nJos\xE9 Manuel Barroso \n\nSonido:\nKrilloud\n\nSalvavidas:\nPAYU y Eva"
+  m_text: "Artistas:\nMar\xEDa Zamora\nGonzalo Colombo\n\nProgramadores:\nPatricia
+    Tabas\nLucia Pardo\nJos\xE9 Manuel Barroso \n\nSonido:\nKrilloud\n\nSalvavidas:\nPAYU
+    y Eva"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
