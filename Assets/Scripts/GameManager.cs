@@ -30,23 +30,39 @@ public class GameManager : MonoBehaviour
             case SceneConstants.Nivel2:
                 if (playerScript.isPlayerOnExit) //isCorrectDoor
                 {
-                    GoTo(SceneConstants.Nivel3);
+                    GoToScene(SceneConstants.Nivel3);
                 }
                 else
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    ReloadLevel();
                 }
-
+                break;
+            case SceneConstants.Nivel3:
+                if(playerScript.isPlayerOnExit)
+                {
+                    GoToScene(SceneConstants.Creditos);
+                }
+                else
+                {
+                    ReloadLevel();
+                }
+                break;
+            case SceneConstants.Creditos:
                 break;
         }
     }
 
-    private void GoToNivel2()
+    private static void ReloadLevel()
     {
-        GoTo(SceneConstants.Nivel2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void GoTo(string scene)
+    private void GoToNivel2()
+    {
+        GoToScene(SceneConstants.Nivel2);
+    }
+
+    private void GoToScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
