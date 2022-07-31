@@ -9,6 +9,7 @@ public class MenuScript : MonoBehaviour
     private void Start(){
         controles.SetActive(false);
         play.SetActive(true);
+        SetFullScreen();
     }
     
     public void Level1(){
@@ -24,5 +25,9 @@ public class MenuScript : MonoBehaviour
 
     public void Quit(){
         Application.Quit();
+    }
+
+    void SetFullScreen(bool isFullScreen = false){
+        Screen.fullScreen = isFullScreen;
     }
 }
