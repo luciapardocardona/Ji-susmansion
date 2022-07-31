@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    void onEscape(InputValue value)
+    void OnEscape(InputValue value)
     {
         SceneManager.LoadScene(SceneConstants.Menu);
     }

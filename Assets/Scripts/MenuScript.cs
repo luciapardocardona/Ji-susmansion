@@ -12,23 +12,12 @@ public class MenuScript : MonoBehaviour
     
     public void Level1(){
         controles.SetActive(true);
-        if(Input.anyKey){
-            Invoke("Inicia", 0.1f);
-        }
+        Invoke("Inicia", 2f);
+        
     }
 
     private void Inicia(){
-        SceneManager.LoadScene("Nivel1");
-    }
-
-    void Update(){
-        Salir();
-    }
-
-    private void Salir(){
-        if (Input.GetKeyDown(KeyCode.Escape)){
-            Application.Quit();
-        }
+        SceneManager.LoadScene(SceneConstants.Nivel1);
     }
 
     public void Quit(){
