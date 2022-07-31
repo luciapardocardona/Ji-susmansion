@@ -404,9 +404,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 1553274434}
   dialogs:
-  - verdadita
-  - 'metirita1 '
-  - metirita2
+  - "\xA1No les hagas caso! \xA1Cr\xE9eme a m\xED! Es la puerta verde."
+  - "Sal\xED una vez por la puerta de la izquierda."
+  - "\xBFTengo cara de enga\xF1arte? Ve por la puerta morada."
   selectedText: 0
 --- !u!1 &308635290
 GameObject:
@@ -2222,9 +2222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 1589808017}
   dialogs:
-  - Verdad
-  - Mentira 1
-  - Mentira 2
+  - "Sigo sin acordarme por la puerta que entr\xE9... !Ja Ja Ja!"
+  - El del centro es un trolero.
+  - "\xBFHas probado a usar una llave? Je Je Je."
   selectedText: 0
 --- !u!4 &1912176908 stripped
 Transform:
@@ -2519,9 +2519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 1662771848}
   dialogs:
-  - verdad
-  - 'mentira 1 '
-  - mentira2
+  - "La puerta correcta es la que est\xE1 a la derecha."
+  - "\xA1No te fies del amarillo! Tiene cara sospechosa."
+  - Aunque no lo aparente el verde sabe la verdad.
   selectedText: 0
 --- !u!1001 &2629845165211603289
 PrefabInstance:
