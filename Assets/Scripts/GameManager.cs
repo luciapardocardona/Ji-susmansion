@@ -36,24 +36,34 @@ public class GameManager : MonoBehaviour
             case SceneConstants.Nivel2:
                 if (playerScript.isPlayerOnExit) //isCorrectDoor
                 {
+                    myAnimator = GameObject.Find("Purple Door").GetComponentInChildren<Animator>();
+                    myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.Nivel3;
-                    Invoke(nameof(GoToNextScene), 2f);
+                    Invoke(nameof(GoToNextScene), 1f);
                     sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {
+                    myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
+                    myAnimator.SetBool(AnimationConstants.action, true);
+                    //Invoke(nameof(ReloadLevel), 1f);
                     ReloadLevel();
                 }
                 break;
             case SceneConstants.Nivel3:
                 if(playerScript.isPlayerOnExit)
                 {
+                    myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
+                    myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.Creditos;
-                    Invoke(nameof(GoToNextScene), 2f);
+                    Invoke(nameof(GoToNextScene), 1f);
                     sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {
+                    myAnimator = GameObject.Find("Purple Door").GetComponentInChildren<Animator>();
+                    myAnimator.SetBool(AnimationConstants.action, true);
+                    //Invoke(nameof(ReloadLevel), 1f);
                     ReloadLevel();
                 }
                 break;
