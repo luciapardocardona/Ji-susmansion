@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 15f;
-    [SerializeField] GameManager gameManager;
-
+    GameManager gameManager;
+    NPCsMovement nPCsMovement;
     PlayerScript playerScript;
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         myBoxCollider = GetComponent<BoxCollider2D>();
         playerScript = GetComponent<PlayerScript>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        nPCsMovement = GetComponent<NPCsMovement>();
 
         scene = SceneManager.GetActiveScene().name;
         thereIsSwitch = scene == SceneConstants.Nivel1 || scene == SceneConstants.Nivel3;
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             if (scene == SceneConstants.Nivel3)
             {
                 switchScript.isLightOn = !switchScript.isLightOn;
+                nPCsMovement.MoveMonsters();
             }
             else
             {

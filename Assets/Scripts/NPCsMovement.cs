@@ -10,17 +10,22 @@ public class NPCsMovement : MonoBehaviour
     float posY = 3f;
     float posZ = 0f;
 
-    void MoveMonsters()
+    public void MoveMonsters()
     {
         List<int> tmpMonsters = new List<int> { };
 
-        foreach (var position in positions)
+        for (int posIndex = 0; posIndex < positions.Count; posIndex++)
         {
             int index = Random.Range(0, monsters.Count);
+            while (tmpMonsters.Contains(index))
+            {
+                index = Random.Range(0, monsters.Count);
+            }
+
             tmpMonsters.Add(index);
             var monster = monsters[index];
-            monster.transform.Translate(position,posY,posZ);
-            //monster.GetComponent<NPCsDialogSystem>
+            monster.transform.position = new Vector3(positions[posIndex], posY, posZ);
+            //monster.GetComponent<NPCsDialogSystem>().selectedText = posIndex == 1 ? 0 : Random.Range(1, 2);
         }
     }
 }

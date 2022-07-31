@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16419876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 864253743390237755, guid: 64ee8742cb6875f4c86aa3d3f9a902a8, type: 3}
+  m_PrefabInstance: {fileID: 1313779383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &121567780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2385547012035210068, guid: f7446af8e32346f43a92335eced1a102, type: 3}
@@ -716,6 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99920eed2cf77ce4497dfa4c5a9f06ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsters: []
 --- !u!1 &660276872
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +921,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &795676602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6695103427835775988, guid: c6a763d18f581584d8074f9e394ad2d4, type: 3}
+  m_PrefabInstance: {fileID: 1164602928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &865374188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1305,6 +1316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a763d18f581584d8074f9e394ad2d4, type: 3}
+--- !u!1 &1270282417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 704129319378461525, guid: 0db7018f501076b45b3e96aa6d0e4236, type: 3}
+  m_PrefabInstance: {fileID: 457274637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270836510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8124335576553818969, guid: f7446af8e32346f43a92335eced1a102, type: 3}
@@ -1809,6 +1825,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2385547012035210068, guid: f7446af8e32346f43a92335eced1a102, type: 3}
   m_PrefabInstance: {fileID: 333750718}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2065338026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7855474773564373321, guid: 4e5209f840725644d9e3b10b027ab2fb, type: 3}
+  m_PrefabInstance: {fileID: 7855474773247967084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2065338034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065338026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99920eed2cf77ce4497dfa4c5a9f06ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 795676602}
+  - {fileID: 1270282417}
+  - {fileID: 16419876}
 --- !u!1 &2081419811
 GameObject:
   m_ObjectHideFlags: 0
