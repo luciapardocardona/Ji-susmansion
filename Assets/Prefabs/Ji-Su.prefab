@@ -216,6 +216,7 @@ MonoBehaviour:
   runSpeed: 8
   jumpSpeed: 15
   gameManager: {fileID: 0}
+  soundJump: {fileID: 8300000, guid: 4374e073fad18ca479ee0384a20a79a5, type: 3}
 --- !u!114 &7855474773247967086
 MonoBehaviour:
   m_ObjectHideFlags: 0
