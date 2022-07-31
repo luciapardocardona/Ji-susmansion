@@ -39,15 +39,16 @@ public class GameManager : MonoBehaviour
                     myAnimator = GameObject.Find("Purple Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.Nivel3;
-                    Invoke(nameof(GoToNextScene), 1f);
+                    Invoke(nameof(GoToNextScene), 2f);
                     sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {
                     myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
-                    //Invoke(nameof(ReloadLevel), 1f);
+                    //Invoke(nameof(GoToNextScene), 2f);
                     ReloadLevel();
+                    sound.PlayOneShot(soundWoodDoor);
                 }
                 break;
             case SceneConstants.Nivel3:
@@ -55,16 +56,19 @@ public class GameManager : MonoBehaviour
                 {
                     myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
-                    this.nextScene = SceneConstants.Creditos;
-                    Invoke(nameof(GoToNextScene), 1f);
+                    this.nextScene = SceneConstants.FinalBueno;
+                    Invoke(nameof(GoToNextScene), 2f);
                     sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {
                     myAnimator = GameObject.Find("Purple Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
-                    //Invoke(nameof(ReloadLevel), 1f);
-                    ReloadLevel();
+                    this.nextScene = SceneConstants.FinalMalo;
+                    Invoke(nameof(GoToNextScene), 2f);
+                    //Invoke(nameof(GoToNextScene), 2f);
+                    //ReloadLevel();
+                    sound.PlayOneShot(soundWoodDoor);
                 }
                 break;
             case SceneConstants.Creditos:
