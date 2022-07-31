@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
                 {
                     myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
-                    //Invoke(nameof(GoToNextScene), 2f);
                     ReloadLevel();
                     sound.PlayOneShot(soundWoodDoor);
                 }
@@ -66,8 +65,6 @@ public class GameManager : MonoBehaviour
                     myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.FinalMalo;
                     Invoke(nameof(GoToNextScene), 2f);
-                    //Invoke(nameof(GoToNextScene), 2f);
-                    //ReloadLevel();
                     sound.PlayOneShot(soundWoodDoor);
                 }
                 break;

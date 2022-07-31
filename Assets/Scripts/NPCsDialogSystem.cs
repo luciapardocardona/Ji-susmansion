@@ -11,6 +11,9 @@ public class NPCsDialogSystem : MonoBehaviour
     [SerializeField]
     List<string> dialogs;
 
+    [SerializeField] AudioClip soundnpc;
+
+    AudioSource sound;
     public int selectedText = 0;
 
     // Start is called before the first frame update
@@ -23,6 +26,7 @@ public class NPCsDialogSystem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         dialog.text = this.dialogs[selectedText];
+        sound.PlayOneShot(soundnpc);
         dialog.enabled = true;
     }
 
