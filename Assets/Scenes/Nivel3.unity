@@ -580,6 +580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656813302}
+  - component: {fileID: 656813303}
   m_Layer: 0
   m_Name: NPCs
   m_TagString: Untagged
@@ -605,6 +606,18 @@ Transform:
   m_Father: {fileID: 143406038}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656813303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656813301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99920eed2cf77ce4497dfa4c5a9f06ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &660276872
 GameObject:
   m_ObjectHideFlags: 0
