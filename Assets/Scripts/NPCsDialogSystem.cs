@@ -20,6 +20,7 @@ public class NPCsDialogSystem : MonoBehaviour
     void Start()
     {
         dialog.enabled = false;
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
