@@ -5,7 +5,6 @@ using UnityEngine;
 public class NPCsMovement : MonoBehaviour
 {
     [SerializeField] List<GameObject> monsters;
-    bool isLightOn = false;
     List<float> positions = new List<float> { -1f, -4f, -7f };
     float posY = 3f;
     float posZ = 0f;
