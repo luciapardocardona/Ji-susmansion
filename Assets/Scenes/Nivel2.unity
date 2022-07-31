@@ -582,8 +582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -448, y: -723}
-  m_SizeDelta: {x: 620, y: 880}
+  m_AnchoredPosition: {x: -763, y: -478}
+  m_SizeDelta: {x: 387.78, y: 880}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &777248036
 MonoBehaviour:
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 1589808017}
   dialogs:
-  - I am yellow NPC
+  - "\xA1El morado me encanta! Pero he entrado por la puerta verde."
   selectedText: 0
 --- !u!4 &914565425 stripped
 Transform:
@@ -1116,8 +1116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 657, y: 4}
-  m_SizeDelta: {x: 620, y: 880}
+  m_AnchoredPosition: {x: 606.9703, y: 4}
+  m_SizeDelta: {x: 706.06, y: 880}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1312670649 stripped
 GameObject:
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 777248036}
   dialogs:
-  - I am the square NPC
+  - "\xA1No vayas por la puerta morada! Huele muy mal ah\xED dentro."
   selectedText: 0
 --- !u!1 &1580862959
 GameObject:
@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 1297634185}
   dialogs:
-  - I am the green NPC
+  - "No me acuerdo por la puerta que entr\xE9... Me gusta el color verde."
   selectedText: 0
 --- !u!4 &2110925792 stripped
 Transform:
