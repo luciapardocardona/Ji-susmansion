@@ -24,14 +24,19 @@ public class GameManager : MonoBehaviour
     {
         var currentScene = SceneManager.GetActiveScene();
 
+        if(currentScene.name != SceneConstants.Nivel1)
+        {
+            sound.PlayOneShot(soundWoodDoor);
+        }
+
         switch (currentScene.name)
         {
             case SceneConstants.Nivel1:
                 myAnimator = GameObject.Find("Door").GetComponentInChildren<Animator>();
                 myAnimator.SetBool(AnimationConstants.action, true);
                 this.nextScene = SceneConstants.Nivel2;
-                Invoke(nameof(GoToNextScene), 2f);
                 sound.PlayOneShot(soundMetalDoor);
+                Invoke(nameof(GoToNextScene), 2f);
                 break;
             case SceneConstants.Nivel2:
                 if (playerScript.isPlayerOnExit) //isCorrectDoor
@@ -40,15 +45,12 @@ public class GameManager : MonoBehaviour
                     myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.Nivel3;
                     Invoke(nameof(GoToNextScene), 2f);
-                    sound.PlayOneShot(soundWoodDoor);
                 }
                 else
                 {
                     myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
-                    //Invoke(nameof(GoToNextScene), 2f);
-                    ReloadLevel();
-                    sound.PlayOneShot(soundWoodDoor);
+                    Invoke(nameof(ReloadLevel), 2f);
                 }
                 break;
             case SceneConstants.Nivel3:
@@ -57,8 +59,7 @@ public class GameManager : MonoBehaviour
                     myAnimator = GameObject.Find("Green Door").GetComponentInChildren<Animator>();
                     myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.FinalBueno;
-                    Invoke(nameof(GoToNextScene), 2f);
-                    sound.PlayOneShot(soundWoodDoor);
+                    Invoke(nameof(GoToNextScene), 2f);                    
                 }
                 else
                 {
@@ -66,9 +67,6 @@ public class GameManager : MonoBehaviour
                     myAnimator.SetBool(AnimationConstants.action, true);
                     this.nextScene = SceneConstants.FinalMalo;
                     Invoke(nameof(GoToNextScene), 2f);
-                    //Invoke(nameof(GoToNextScene), 2f);
-                    //ReloadLevel();
-                    sound.PlayOneShot(soundWoodDoor);
                 }
                 break;
             case SceneConstants.Creditos:
@@ -76,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static void ReloadLevel()
+    private void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
