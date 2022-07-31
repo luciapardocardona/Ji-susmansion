@@ -826,7 +826,7 @@ MonoBehaviour:
   dialog: {fileID: 1589808017}
   dialogs:
   - "\xA1El morado me encanta! Pero he entrado por la puerta verde."
-  soundnpc: {fileID: 0}
+  soundnpc: {fileID: 8300000, guid: 89ec41082cca4b94d879a8f947de2f2f, type: 3}
   selectedText: 0
 --- !u!4 &914565425 stripped
 Transform:
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   dialog: {fileID: 777248036}
   dialogs:
   - "\xA1No vayas por la puerta morada! Huele muy mal ah\xED dentro."
-  soundnpc: {fileID: 0}
+  soundnpc: {fileID: 8300000, guid: 339d18708c2b0e74396bce85a2e649a4, type: 3}
   selectedText: 0
 --- !u!1 &1580862959
 GameObject:
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   dialog: {fileID: 1297634185}
   dialogs:
   - "No me acuerdo por la puerta que entr\xE9... Me gusta el color verde."
-  soundnpc: {fileID: 0}
+  soundnpc: {fileID: 8300000, guid: 74fd27e5ba823af41b73eaea67af2086, type: 3}
   selectedText: 0
 --- !u!4 &2110925792 stripped
 Transform:
