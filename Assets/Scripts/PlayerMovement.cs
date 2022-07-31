@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 15f;
+    [SerializeField] List<GameObject> monsters;
     GameManager gameManager;
     NPCsMovement nPCsMovement;
     PlayerScript playerScript;
@@ -105,10 +106,20 @@ public class PlayerMovement : MonoBehaviour
         if (thereIsSwitch)
         {
             myAnimator.SetBool("isB&W", !switchScript.isLightOn);
+            foreach (var item in monsters)
+            {
+                var monster = item.GetComponentInChildren<Animator>();
+                monster.SetBool("isB&W", !switchScript.isLightOn);
+            }
         }
         else
         {
             myAnimator.SetBool("isB&W", false);
+            foreach (var item in monsters)
+            {
+                var monster = item.GetComponentInChildren<Animator>();
+                monster.SetBool("isB&W", false);
+            }
         }
     }
 }

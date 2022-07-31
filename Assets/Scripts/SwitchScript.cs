@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchScript : MonoBehaviour
 {
-    
+
     AudioSource sound;
     public GameObject[] onLightOn, onLightOff;
     public bool isLightOn = false;
@@ -13,20 +13,26 @@ public class SwitchScript : MonoBehaviour
     void Start()
     {
         sound = GetComponent<AudioSource>();
-        ToggleLight();
+        ToggleLight(true);
     }
 
-    public void ToggleLight()
+    public void ToggleLight(bool comesFromStart = false)
     {
         foreach (var item in onLightOn)
         {
             item.SetActive(isLightOn);
-            sound.PlayOneShot(soundAction);
+            if (!comesFromStart)
+            {
+                sound.PlayOneShot(soundAction);
+            }
         }
         foreach (var item in onLightOff)
         {
             item.SetActive(!isLightOn);
-            sound.PlayOneShot(soundAction);
+            if (!comesFromStart)
+            {
+                sound.PlayOneShot(soundAction);
+            }
         }
     }
 }
