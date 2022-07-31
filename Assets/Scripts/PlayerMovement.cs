@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
         scene = SceneManager.GetActiveScene().name;
         thereIsSwitch = scene == SceneConstants.Nivel1 || scene == SceneConstants.Nivel3;
+        if (scene == SceneConstants.Nivel3)
+        {
+            nPCsMovement.MoveMonsters();
+        }
         if (thereIsSwitch)
         {
             switchScript = GameObject.Find("Scenario").GetComponent<SwitchScript>();

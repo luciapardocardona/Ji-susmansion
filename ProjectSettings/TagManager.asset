@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - TextoNivel3
   - 
   - 
   - 
@@ -59,4 +59,7 @@ TagManager:
     locked: 0
   - name: Shadow
     uniqueID: 914870379
+    locked: 0
+  - name: Nivel3Sorting
+    uniqueID: 2233973117
     locked: 0
